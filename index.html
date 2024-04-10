@@ -1,47 +1,69 @@
-<link rel="stylesheet" href="https://www.gstatic.com/dialogflow-console/fast/df-messenger/prod/v1/themes/df-messenger-default.css">
-<script src="https://www.gstatic.com/dialogflow-console/fast/df-messenger/prod/v1/df-messenger.js"></script>
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chatbot de démonstration</title>
+  <link rel="stylesheet" href="https://www.gstatic.com/dialogflow-console/fast/df-messenger/prod/v1/themes/df-messenger-default.css">
+  <style>
+    body, html {
+      height: 100%;
+      margin: 0;
+      display: flex;
 
+      font-family: 'Google Sans', sans-serif;
+      background-color: #f3f6fc;
+    }
+    .container {
+      text-align: left;
+      width: 100%;
+      padding: 0 20px;
+    }
+    .image-container {
+      margin-top: 20px;
+    }
+    img {
+      width: 200px;
+      height: 200px;
+      display: block;
+    }
+    df-messenger {
+      position: fixed;
+      z-index: 999;
+      bottom: 0;
+      right: 0;
+      top: 0;
+      width: 500px;
+    }
+    df-messenger {
+      --df-messenger-font-color: #000;
+      --df-messenger-font-family: 'Google Sans', sans-serif;
+      --df-messenger-chat-background: #f3f6fc;
+      --df-messenger-message-user-background: #d3e3fd;
+      --df-messenger-message-bot-background: #fff;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
 
-<h3>Chatbot de démonstration créé par Maestria Innovation.</h3>
-<div class="image-container">
-  <img src="wizzvet.png" style="width: 200px; height: 200px; display: block;">
-</div>
+    <div class="image-container">
+      <img src="wizzvet.png" alt="Wizzvet">
+    </div>
 
-<df-messenger
-  location="europe-west1"
-  project-id="rag-test-416309"
-  agent-id="cf6e62c2-179b-4867-850d-8eb3a870f8ce"
-  language-code="fr"
-  max-query-length="-1">
-  <df-messenger-chat
-   chat-title="">
-  </df-messenger-chat>
-</df-messenger>
-<style>
-  body, html {
-    height: 100%;
-    margin: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  .image-container {
-    text-align: center;
-  }
+    <h3>Chatbot de démonstration créé par Maestria Innovation.</h3>
+    <p>Ce chatbot répond à des questions vétérinaires depuis une base de connaissances.</p>
+    <p>Si la réponse ne se trouve pas dans cette base, le chatbot ne génère pas de réponse.</p>
 
-  df-messenger {
-    z-index: 999;
-    position: fixed;
-    --df-messenger-font-color: #000;
-    --df-messenger-font-family: Google Sans;
-    --df-messenger-chat-background: #f3f6fc;
-    --df-messenger-message-user-background: #d3e3fd;
-    --df-messenger-message-bot-background: #fff;
-    bottom: 0;
-    right: 0;
-    top: 0;
-    width: 350px;
-  }
-</style>
-
-
+  </div>
+  <df-messenger
+    location="europe-west1"
+    project-id="rag-test-416309"
+    agent-id="cf6e62c2-179b-4867-850d-8eb3a870f8ce"
+    language-code="fr"
+    max-query-length="-1">
+    <df-messenger-chat chat-title=""></df-messenger-chat>
+  </df-messenger>
+  <script src="https://www.gstatic.com/dialogflow-console/fast/df-messenger/prod/v1/df-messenger.js"></script>
+</body>
+</html>
